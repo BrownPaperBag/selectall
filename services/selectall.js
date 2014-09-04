@@ -62,7 +62,7 @@
 
           var link = links[name];
 
-          link.master.checked = !link.master.checked;
+          link.master.checked = link.slaves.length > 0 && !link.master.checked;
 
           for (var i=0; i<link.slaves.length; i++) {
 
@@ -86,7 +86,7 @@
 
           var link = links[name];
 
-          link.master.checked = num_selected(link) == link.slaves.length;
+          link.master.checked = (link.slaves.length > 0 && num_selected(link) == link.slaves.length);
 
         }
 
